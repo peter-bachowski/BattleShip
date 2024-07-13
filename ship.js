@@ -1,15 +1,23 @@
 class Ship {
-    constructor (length, hits = 0, sunk = false) {
+    constructor (length) {
         if (length < 2 || length > 5) {
             alert("You must enter a length between 2 and 5.")
         }
         this.length = length;
-        this.hits = hits;
-        this.sunk = sunk;
+        this.hits = 0;
+        this.sunk = false;
     }
 
+    hit() {
+        this.hits += 1;
+        if (this.hits >= this.length) {
+            this.sunk = true;
+        }
+    }
 
+    isSunk() {
+        return this.sunk;
+    }
 }
 
-const ship1 = new Ship(6);
-console.log(ship1);
+export default Ship;
