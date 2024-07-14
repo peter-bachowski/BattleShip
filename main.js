@@ -1,4 +1,3 @@
-import Gameboard from "./gameboard.js";
-import Ship from "./ship.js";
-import Player from "./player.js";
+import addBaseElements from "./addBaseElements.js";
 
+addBaseElements();
