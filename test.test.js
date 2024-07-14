@@ -1,8 +1,12 @@
 import Ship from './ship.js';
 import Gameboard from './gameboard.js';
+import Player from './player.js';
 
 const ship1 = new Ship(2);
 const gameboard1 = new Gameboard();
+const player1 = new Player('real');
+const player2 = new Player('computer');
+//const player3 = new Player('player');
 gameboard1.placeShipAt(ship1,[1,1],[2,1]);
 gameboard1.receiveAttack([1,1]);
 gameboard1.receiveAttack([3,1]);
@@ -63,3 +67,17 @@ test('if sinking all ships ends the game', () => {
   expect(gameboard1.isGameOver()).toBe(true);
 });
 
+test('return real if the player type is real, and computer if the player is a computer', () => {
+  expect(player1.playerType).toBe('real');
+  expect(player2.playerType).toBe('computer');
+});
+
+test('errors if player type is neither real nor computer', () => {
+  expect( () => {
+    new Player('player');
+  }).toThrow('alert');
+});
+
+test('player class contains a gameboard', () => {
+  expect(player1.playerBoard).not.toBeUndefined();
+});
