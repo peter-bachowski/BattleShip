@@ -2,6 +2,8 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 * {
@@ -10,14 +12,10 @@ body, html {
   font-size: 20px;
 }
 
-body, html, .container {
-  height: 100%;
-  width: 100%;
-}
-
 .container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .header, .footer {
@@ -26,27 +24,56 @@ body, html, .container {
   height: 50px;
   background-color: rgb(14, 7, 79);
   justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+}
+
+.footer {
+  height: 70px;
+  align-items: end;
+  font-size: 15px;
 }
 
 .mainBody {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  flex: 1;
+  flex-direction: column;
 }
 
 .boardContainer {
-  height: 90%;
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.playerBoardContainer, .opponentBoardContainer {
-  width: 500px;
-  height: 500px;
+.playerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.board {
+  margin-bottom: 30px;
+  min-width: 500px;
+  min-height: 500px;
   background-color: rgb(212, 212, 212);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.square {
+  border: 0.5px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */

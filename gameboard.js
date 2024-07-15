@@ -10,6 +10,7 @@ class Gameboard {
                     containsShip: false,
                     hit: false
                 }
+
                 this.board[i][j] = squareObj;
             }
         }
