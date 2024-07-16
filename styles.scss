@@ -32,6 +32,7 @@ body, html {
   align-items: center;
   color: white;
   font-size: 25px;
+  padding: 10px;
 }
 
 .footer {
@@ -74,12 +75,23 @@ body, html {
   min-height: 500px;
   background-color: rgb(212, 212, 212);
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
 }
 
 .square {
   border: 0.5px solid black;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square.active:hover {
+  background-color: rgb(237, 236, 236);
+}
+
+button {
+  margin: 10px;
 }
 
 // #realPlayerBoard {

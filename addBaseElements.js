@@ -23,6 +23,6 @@ function addBaseElements () {
     container.appendChild(footer);
 
     header.innerText = 'BattleShip!';
-    footer.innerText = 'Copyright Peter Bachowski 2024'
+    footer.innerText = 'Copyright © Peter Bachowski 2024'
     startBtn.innerText = 'Start Game!';
 }
