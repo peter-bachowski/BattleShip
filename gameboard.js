@@ -17,20 +17,14 @@ class Gameboard {
         this.shipsList = [];
     }
 
-    placeShipAt (ship, coord1, coord2) {
+    placeShipAt (ship, coord) {
         this.shipsList.push(ship);
 
-        let initX = coord1[0];
-        let initY = coord1[1];
+        let coordX = coord[0];
+        let coordY = coord[1];
 
-        let finalX = coord2[0];
-        let finalY = coord2[1];
-
-        this.board[initX][initY].ship = ship;
-        this.board[initX][initY].containsShip = true;
-
-        this.board[finalX][finalY].ship = ship;
-        this.board[finalX][finalY].containsShip = true;
+        this.board[coordX][coordY].ship = ship;
+        this.board[coordX][coordY].containsShip = true;
     }
 
     receiveAttack (coord1) {

@@ -6,8 +6,8 @@ const ship1 = new Ship(2);
 const gameboard1 = new Gameboard();
 const player1 = new Player('real');
 const player2 = new Player('computer');
-//const player3 = new Player('player');
-gameboard1.placeShipAt(ship1,[1,1],[2,1]);
+gameboard1.placeShipAt(ship1,[1,1]);
+gameboard1.placeShipAt(ship1,[2,1]);
 gameboard1.receiveAttack([1,1]);
 gameboard1.receiveAttack([3,1]);
 
