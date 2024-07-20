@@ -47,7 +47,7 @@ function addBoardElements () {
             for (let x = 1; x <= 10; x++) {
                 const squareElement = document.createElement('div');
                 squareElement.classList.add('square');
-                squareElement.id = board.id.charAt(0) + x.toString() + "," + y.toString(); //potential issues
+                squareElement.id = board.id.charAt(0) + x.toString() + "_" + y.toString(); //potential issues
                 board.appendChild(squareElement);
             }
         }

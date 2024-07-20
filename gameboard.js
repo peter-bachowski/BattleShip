@@ -18,7 +18,7 @@ class Gameboard {
     }
 
     placeShipAt (ship, coord) {
-        this.shipsList.push(ship);
+        //this.shipsList.push(ship);
 
         let coordX = coord[0];
         let coordY = coord[1];
