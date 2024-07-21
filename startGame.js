@@ -19,8 +19,6 @@ function startGame () { //drives the game once the start button is pressed
 
             let coordinate = getLocation(Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)); //randomizes the initial position of the ship
         
-            //player1.playerBoard.placeShipAt(ship, coordinate);
-
             setDirection(coordinate);
 
             function setDirection (coord) { 
@@ -32,16 +30,19 @@ function startGame () { //drives the game once the start button is pressed
                 ];
                 const direction = possibleMoves[(Math.floor(Math.random()*4))];
                 let valid = true;
-                for (let i = 1; i < ship.length; i++) {
-                    let newCoord = [coord[0] + direction[0], coord[1] + direction[1]];
-                    if (newCoord[0] < 0 || newCoord[1] < 0 || newCoord[0] > 9 || newCoord[1] > 9 || player1.playerBoard.board[coord[0]][coord[1]].containsShip === true) {
-                        let newCoordinate = getLocation(Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)); //randomizes the initial position of the ship
-                        setDirection(newCoordinate);
-                        valid = false;
-                        return;
-                    }
-                    coord = newCoord;
+                while (coord[0] >= 0 && coord[1] >= 0 && coord[0] < 10 && coord[1] < 10 && player1.playerBoard.board[coord[0]][coord[1]].containsShip !== true) {
+                    //from here
                 }
+                // for (let i = 1; i < ship.length; i++) {
+                //     let newCoord = [coord[0] + direction[0], coord[1] + direction[1]];
+                //     if (newCoord[0] < 0 || newCoord[1] < 0 || newCoord[0] > 9 || newCoord[1] > 9 || player1.playerBoard.board[newCoord[0]][newCoord[1]].containsShip === true) {
+                //         let newCoordinate = getLocation(Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)); //randomizes the initial position of the ship
+                //         setDirection(newCoordinate);
+                //         valid = false;
+                //         return;
+                //     }
+                //     coord = newCoord;
+                // }
                 if (valid === true) {
                     let coord = coordinate;
                     player1.playerBoard.placeShipAt(ship, coordinate);
@@ -54,18 +55,17 @@ function startGame () { //drives the game once the start button is pressed
             }
 
             function getLocation (p1XCoord, p1YCoord) { //checks if the coordinates have a ship. If they do, the function generates new coordinates until it finds empty ones, then returns them. If it does not, it returns the coordinates
-                if (player1.playerBoard.board[p1XCoord][p1YCoord].containsShip === true) {
-                    let p1XCoord = Math.floor(Math.random() * 10);
-                    let p1YCoord = Math.floor(Math.random() * 10);        
-                    getLocation(p1XCoord, p1YCoord);
-                    return;
+                while (player1.playerBoard.board[p1XCoord][p1YCoord].containsShip === true) {
+                    p1XCoord = Math.floor(Math.random() * 10);
+                    p1YCoord = Math.floor(Math.random() * 10);        
                 }
+
                 return [p1XCoord, p1YCoord];
+
             }
 
         });
 
-        console.log(player1.playerBoard.shipsList);
 
         loadShipsToBoard(player1);
 
@@ -92,6 +92,9 @@ function startGame () { //drives the game once the start button is pressed
                 element.innerText = 'X';
             });
         });
+
+        console.log(player1.playerBoard.board);
+
     });
 }
 
