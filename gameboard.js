@@ -18,8 +18,6 @@ class Gameboard {
     }
 
     placeShipAt (ship, coord) {
-        //this.shipsList.push(ship);
-
         let coordX = coord[0];
         let coordY = coord[1];
 
@@ -27,13 +25,15 @@ class Gameboard {
         this.board[coordX][coordY].containsShip = true;
     }
 
-    receiveAttack (coord1) {
-        const square = this.board[coord1[0]][coord1[1]];
+    receiveAttack (coord) {
+        const square = this.board[coord[0]][coord[1]];
         square.hit = true;
         if (square.containsShip === true) {
             square.ship.hit();
         }
-        this.isGameOver();
+        if (this.isGameOver() === true) {
+            alert('Game Over!');
+        }
     }
 
     isGameOver () {
