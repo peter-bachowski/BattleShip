@@ -65,7 +65,6 @@ body, html {
 }
 
 .board {
-  margin-bottom: 30px;
   min-width: 500px;
   min-height: 500px;
   background-color: rgb(212, 212, 212);
@@ -87,6 +86,45 @@ body, html {
 
 button {
   margin: 10px;
+}
+
+.boardColumnLabelP1, .boardColumnLabelP2 {
+  margin-bottom: 30px;
+  min-width: 500px;
+  min-height: 50px;
+  background-color: rgb(212, 212, 212);
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(1, 50px);
+}
+
+.boardRowLabelP1, .boardRowLabelP2 {
+  background-color: rgb(212, 212, 212);
+  display: grid;
+  grid-template-columns: repeat(1, 50px);
+  grid-template-rows: repeat(10, 50px);
+}
+
+.boardRowLabelP1, .boardRowLabelP2 {
+  max-height: 500px;
+}
+
+.colmnLabel, .rowLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+  background-color: rgb(185, 185, 185);
+}
+
+.rowLabelAndBoardWrapperP1, .rowLabelAndBoardWrapperP2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.colmnLabelAndBoardWrapperP1, .colmnLabelAndBoardWrapperP2 {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=main.css.map */
